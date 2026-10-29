@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <defs>
+    <radialGradient id="flameGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FFFFFF" />
+      <stop offset="35%" stop-color="#FFE600" />
+      <stop offset="70%" stop-color="#FF5500" />
+      <stop offset="100%" stop-color="#D00000" stop-opacity="0" />
+    </radialGradient>
+    <linearGradient id="clayGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF9E40" />
+      <stop offset="50%" stop-color="#D9531E" />
+      <stop offset="100%" stop-color="#8C2500" />
+    </linearGradient>
+  </defs>
+  <!-- Diya Clay Base -->
+  <path d="M15,55 C15,80 85,80 85,55 C85,50 15,50 15,55 Z" fill="url(#clayGrad)" stroke="#FFE898" stroke-width="2" />
+  <ellipse cx="50" cy="55" rx="35" ry="8" fill="#B33E00" />
+  <ellipse cx="50" cy="54" rx="30" ry="5" fill="#FFE898" opacity="0.6" />
+  <!-- Diya Rim Decoration -->
+  <circle cx="30" cy="62" r="2.5" fill="#FFEAA7" />
+  <circle cx="40" cy="65" r="2.5" fill="#FFEAA7" />
+  <circle cx="50" cy="66" r="3" fill="#FFF7CC" />
+  <circle cx="60" cy="65" r="2.5" fill="#FFEAA7" />
+  <circle cx="70" cy="62" r="2.5" fill="#FFEAA7" />
+  <!-- Flame -->
+  <path d="M50,15 C45,30 38,40 38,48 C38,55 43,58 50,58 C57,58 62,55 62,48 C62,40 55,30 50,15 Z" fill="url(#flameGrad)" />
+  <path d="M50,26 C47,35 44,42 44,48 C44,53 47,54 50,54 C53,54 56,53 56,48 C56,42 53,35 50,26 Z" fill="#FFFFFF" opacity="0.85" />
+</svg>

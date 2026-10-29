@@ -1,0 +1,221 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-saffron: #ea580c;
+    --color-gold: #f59e0b;
+    --color-orange: #c2410c;
+    --color-dark-brown: #241407;
+  }
+
+  body {
+    background-color: #FFFDF9;
+    color: #1f2937;
+    font-family: 'Mukta', 'Outfit', sans-serif;
+    -webkit-tap-highlight-color: transparent;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, .font-heading {
+    font-family: 'Rozha One', 'Cinzel', serif;
+  }
+}
+
+/* Indian Festival Theme Color Palettes */
+.bg-festival-dark {
+  background: radial-gradient(circle at top center, #3d1b06 0%, #261104 60%, #150902 100%);
+}
+
+.festive-gradient {
+  background: linear-gradient(135deg, #9a3412 0%, #ea580c 45%, #f59e0b 100%);
+}
+
+.festive-gradient-gold {
+  background: linear-gradient(135deg, #d97706 0%, #f59e0b 50%, #fef08a 100%);
+}
+
+.festive-card-glow {
+  box-shadow: 0 8px 30px -4px rgba(234, 88, 12, 0.16), 0 4px 12px -2px rgba(245, 158, 11, 0.12);
+}
+
+.gold-glow {
+  filter: drop-shadow(0 0 16px rgba(251, 191, 36, 0.7));
+}
+
+/* Animated Title Shimmer */
+@keyframes textShimmer {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animate-title-shimmer {
+  background: linear-gradient(90deg, #fef08a, #f59e0b, #fed7aa, #fef08a);
+  background-size: 250% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textShimmer 6s ease-in-out infinite;
+}
+
+/* Floating Flower Petals Animation (Lightweight CSS) */
+@keyframes petalFall {
+  0% {
+    transform: translateY(-20px) rotate(0deg);
+    opacity: 0;
+  }
+  15% {
+    opacity: 0.85;
+  }
+  85% {
+    opacity: 0.85;
+  }
+  100% {
+    transform: translateY(105vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+@keyframes petalSway {
+  0%, 100% {
+    margin-left: 0px;
+  }
+  50% {
+    margin-left: 35px;
+  }
+}
+
+.floating-petal {
+  position: absolute;
+  pointer-events: none;
+  z-index: 15;
+  animation: petalFall linear infinite, petalSway ease-in-out infinite;
+  will-change: transform, opacity;
+}
+
+/* Golden Particle Twinkle */
+@keyframes goldTwinkle {
+  0%, 100% {
+    transform: scale(0.6) rotate(0deg);
+    opacity: 0.2;
+    filter: drop-shadow(0 0 2px rgba(245, 158, 11, 0.4));
+  }
+  50% {
+    transform: scale(1.3) rotate(45deg);
+    opacity: 0.95;
+    filter: drop-shadow(0 0 8px rgba(254, 240, 138, 0.9));
+  }
+}
+
+.golden-particle {
+  position: absolute;
+  pointer-events: none;
+  animation: goldTwinkle 3s infinite ease-in-out;
+  border-radius: 9999px;
+  background: radial-gradient(circle, #fef08a 0%, #f59e0b 80%, transparent 100%);
+}
+
+/* Glowing Diya Flame Animation */
+@keyframes flamePulsing {
+  0%, 100% {
+    transform: scale(1) translateY(0);
+    filter: drop-shadow(0 0 8px rgba(245, 158, 11, 0.9)) drop-shadow(0 0 16px rgba(234, 88, 12, 0.6));
+  }
+  50% {
+    transform: scale(1.15) translateY(-3px);
+    filter: drop-shadow(0 0 15px rgba(254, 240, 138, 1)) drop-shadow(0 0 25px rgba(234, 88, 12, 0.85));
+  }
+}
+
+.animate-diya-flame {
+  animation: flamePulsing 1.8s infinite ease-in-out;
+  transform-origin: bottom center;
+}
+
+/* Card Entry Animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+/* Button pulse aura */
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(245, 158, 11, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 0 10px rgba(245, 158, 11, 0);
+  }
+}
+
+.btn-glow {
+  animation: pulseGlow 2.5s infinite;
+}
+
+/* Respect Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .floating-petal, .golden-particle {
+    display: none !important;
+  }
+}
+
+/* Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #fef3c7;
+}
+::-webkit-scrollbar-thumb {
+  background: #ea580c;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #c2410c;
+}
+
+/* Print Styles */
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  #printable-receipt, #printable-receipt * {
+    visibility: visible;
+  }
+  #printable-receipt {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    margin: 0;
+    padding: 20px;
+    background: white !important;
+  }
+  .no-print {
+    display: none !important;
+  }
+}
